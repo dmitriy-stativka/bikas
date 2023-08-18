@@ -1,0 +1,68 @@
+nav.woocommerce-pagination.custom-pagination {
+    display: flex;
+    margin: 0 auto;
+    
+    li, ul {
+        border: none !important;
+        margin: 0;
+        padding: 0;
+        border: inherit;
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        &::before,
+        &::after {
+            content: none;
+        }
+
+    }
+
+    li .page-numbers:not(.next) {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 63px;
+        height: 63px;
+        background-color: transparent;
+
+        color:  rgba(var(--cl-a), 0.5); 
+        font-family: var(--font-family2);
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+        &.current {
+            color:  rgba(var(--cl-a), 1); 
+        }
+    }
+
+    li .page-numbers.next, 
+    li .page-numbers.prev {
+        background-color: rgba(var(--bg-c),1.0);
+        font-size: 0;
+        background-repeat: no-repeat;
+        background-size: 30% 30%;
+        background-position: center;
+
+        width: 63px;
+        height: 63px;
+
+        &:hover {
+            background-color: rgba(var(--bg-c),0.7);
+        }
+    } 
+
+    li .page-numbers.next {
+        background-image: url("data:image/svg+xml,%3Csvg width='8' height='12' viewBox='0 0 8 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.745117 10.4649L5.05516 6.15483L0.745117 1.84478L2.07851 0.520783L7.71256 6.15483L2.07851 11.7889L0.745117 10.4649Z' fill='white'/%3E%3C/svg%3E%0A");
+    }
+
+    li .page-numbers.prev {
+        background-image: url("data:image/svg+xml,%3Csvg width='8' height='12' viewBox='0 0 8 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.31641 1.84478L3.00636 6.15483L7.31641 10.4649L5.98301 11.7889L0.348966 6.15483L5.98301 0.520782L7.31641 1.84478Z' fill='white'/%3E%3C/svg%3E%0A");
+    }
+}

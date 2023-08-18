@@ -1,0 +1,70 @@
+// --------------- hex to rgba mixin ---------------
+@function HexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+:root {
+// --------------- default global variable ---------------
+  --error-bg: #d01f1f;
+  --body-bg: #F5F5F5;
+  //--blog-bg: #EFF0F2;
+  --body-font-size: 16px;
+  --content-width: 1360px;
+  --content-mode-width: 1440px;
+  --container-offset: 20px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --container-mode-width: calc(var(--content-mode-width) + (var(--container-offset) * 2));
+
+// --------------- default JS variable ---------------
+
+//--header-height: 103px;
+//--product-slider-height: Min(11.077vw, 144px);
+
+// --------------- default scroll variable ---------------
+  // --scrollbar-thumb: #009E3B;
+  // --scrollbar-thumb-hover: #00aff0;
+  --scrollbar-track:  #ffffff;
+  --scrollbar-track-hover: #ffffff;
+  --overlay-bg: rgba(0, 0, 0, 0.5);
+
+// --------------- default slect variable ---------------
+//  --select-inner-bg: #404040;
+//  --select-inner-border: #FDFDFD;
+//  --select-focus-border: #FDFDFD;
+
+// --------------- default font-family variable ---------------
+  --font-family: "Roboto", sans-serif;              //  var(--font-family);
+  --font-family2:"Roboto Condensed", sans-serif;    // var(--font-family2);
+  --font-family3:"Comforter", sans-serif;           // var(--font-family3);
+
+
+// --------------- default text color variable ---------------
+
+  //--burger-color: #{HexToRGB(#ffffff)}; // rgba(var(--burger-color),1.0);
+
+
+  --cl-a: #{HexToRGB(#313133)}; // rgba(var(--cl-a),1.0);
+  --cl-b: #{HexToRGB(#FFFfff)}; // rgba(var(--cl-b),1.0);
+  --cl-c: #{HexToRGB(#D4AB80)}; // rgba(var(--cl-c),1.0);
+  --cl-d: #{HexToRGB(#F2E0CC)}; // rgba(var(--cl-d),1.0);
+  --cl-e: #{HexToRGB(#000000)}; // rgba(var(--cl-e),1.0);
+
+
+
+
+// --------------- default background color variable ---------------
+  --bg-a: #{HexToRGB(#313133)}; // rgba(var(--bg-a),1.0);
+  --bg-b: #{HexToRGB(#FFfffF)}; // rgba(var(--bg-b),1.0);
+  --bg-c: #{HexToRGB(#D4AB80)}; // rgba(var(--bg-c),1.0);
+  --bg-d: #{HexToRGB(#F2E0CC)}; // rgba(var(--bg-d),1.0);
+  --bg-e: #{HexToRGB(#000000)}; // rgba(var(--bg-e),1.0);
+
+
+  //--gradient-brown: linear-gradient(180deg, rgba(26, 27, 28, 0.00) 0%, #222 82.29%);
+
+// --------------- default border color color variable ---------------
+  --br-a: #313133; // var(--br-a);
+  --br-b: #D4AB80; // var(--br-b);
+  --br-c: #000000; // var(--br-c);
+  --br-d: rgba(255, 255, 255, 0.5); // var(--br-d);
+
+}

@@ -1,0 +1,27 @@
+.product-section {
+    padding: 50px 0;
+
+   &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+   }
+
+   .swiper-container {
+    width: 100%;
+    max-width: 100%;
+   }
+
+   .swiper-slide {
+    height: initial;
+   }
+
+
+  &__slider {
+    gap: 20px;
+    display: flex;
+    align-items: center;
+
+    margin: 0 -44px;
+  }
+}

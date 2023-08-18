@@ -1,0 +1,19 @@
+.social {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        gap: 10px;
+        max-width: 100px;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

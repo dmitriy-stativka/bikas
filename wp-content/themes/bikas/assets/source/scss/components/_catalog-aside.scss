@@ -1,0 +1,32 @@
+.catalog-aside {
+    border-top: 1px solid var(--br-a);
+    padding-top: 30px;
+
+    .widget-title {
+        display: none;
+    }
+
+    .product-categories {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cat-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        color: rgba(var(--cl-a),1.0);
+        font-family: var(--font-family2);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100%;
+
+        .count {
+            color: rgba(var(--cl-a), 0.5);
+            font-size: 20px;
+        }
+    }
+}

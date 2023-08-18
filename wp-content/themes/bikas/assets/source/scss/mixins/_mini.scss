@@ -1,0 +1,99 @@
+/* stylelint-disable */
+@mixin dfc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin dfsb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin psevdo {
+  content: "";
+  position: absolute;
+}
+
+@mixin image-set($pathToImage) {
+  background-image: url("#{$pathToImage}.png");
+  /* stylelint-disable-next-line declaration-block-no-duplicate-properties */
+  background-image: image-set(
+  /* stylelint-disable-next-line function-comma-newline-after */
+  /* "#{$pathToImage}.avif"type("image/avif") */
+  "#{$pathToImage}.webp"type("image/webp"),
+  "#{$pathToImage}.png"type("image/png")
+  );
+}
+
+@mixin footerToBottom {
+  display: grid;
+  min-height: 100vh;
+
+  grid-template-columns: 100%;
+  grid-template-rows: auto 1fr auto;
+}
+
+@mixin mr($value) {
+  &:not(:last-child) {
+    margin-right: $value;
+  }
+}
+
+@mixin ml($value) {
+  &:not(:last-child) {
+    margin-left: $value;
+  }
+}
+
+@mixin mb($value) {
+  &:not(:last-child) {
+    margin-bottom: $value;
+  }
+}
+
+@mixin mt($value) {
+  &:not(:last-child) {
+    margin-top: $value;
+  }
+}
+
+@mixin line-clamp($value) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $value;
+  overflow: hidden;
+}
+
+@mixin gradient-border($background, $border-width) {
+  position: relative;
+  &::before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: #{$border-width};
+    background: #{$background};
+    -webkit-mask:
+       linear-gradient(#fff 0 0) content-box,
+       linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+}
+
+// @mixin fix-offset($offset-value-top, $offset-value-bottom,  $offset-value){
+//   padding: $offset-value-top $offset-value $offset-value-bottom;
+//   margin: $offset-value-top  calc($offset-value * -1) $offset-value-bottom;
+//   width: #{100 + $offset-value};
+// }
+
+
+$test: 16px;
+
+@function rem($pixels) {
+  @return #{$pixels /$test}rem;
+}
+

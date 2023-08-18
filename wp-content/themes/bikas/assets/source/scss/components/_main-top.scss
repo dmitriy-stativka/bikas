@@ -1,0 +1,33 @@
+.main-top {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__title {
+    color: rgba(var(--cl-e),1.0);
+    font-family:var(--font-family2); 
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    position: relative;
+    width: fit-content;
+
+    &::before {
+      position: absolute;
+      width: 40%;
+      height: 6px;
+      display: block;
+      left: 0;
+      transform: translateY(150%);
+      bottom: 0;
+      content: '';
+      background-color: rgba(var(--bg-c),1.0);
+    }
+
+    b {
+      font-size: 700;
+    }
+  }
+
+}

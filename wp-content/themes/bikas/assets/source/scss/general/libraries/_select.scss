@@ -1,0 +1,130 @@
+.select {
+  position: relative;
+  z-index: 1;
+  user-select: none;
+  width: 100%;
+
+  &__header {
+    width: 100%;
+    max-width: 100%;
+    cursor: pointer;
+    height: var(--default-size);
+    background: rgba(var(--bg-a),1.0);
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    position: relative;
+    z-index: 6;
+
+    border-radius: 44px;
+
+    & > svg {
+      fill: transparent;
+      stroke: rgba(var(--bg-f),1.0);
+      transition: transform .4s linear;
+    }
+  }
+
+  &__current {
+    flex-grow: 1;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    grid-gap: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    font-size: 16px;
+    font-family: var(--font-family);
+    line-height: 24px;
+    color: rgba(var(--cl-b),1.0);
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__body {
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    height: 0;
+    top: 0;
+    overflow: hidden;
+    transition: all 0.2s ease-in;
+    margin-top: calc(var(--default-size) + 6px);
+    box-shadow: 0px 4px 8px 0px rgba(77, 61, 4, 0);
+    border-radius: 8px;
+    border: var(--br-a);
+    background:  rgba(var(--bg-a),1.0);
+
+    i {
+      margin: 0;
+      text-transform: uppercase;
+      font-size: inherit;
+      line-height: inherit;
+    }
+  }
+
+  &__list {
+    overflow-y: auto;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-right: 8px;
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--scrollbar-thumb);
+      border-radius: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      border-radius: 8px;
+    }
+  }
+
+  &__option {
+    display: flex;
+    padding: 9px 9px 9px 16px;
+    align-items: center;
+    grid-gap: 5px;
+    width: 100%;
+    cursor: pointer;
+    // transition: all 0.2s ease;
+
+    color: rgba(var(--cl-d),1.0);
+    font-size: 16px;
+    font-family: var(--font-family);
+    line-height: 100%;
+    color: rgba(var(--cl-d),1.0);
+
+
+    &:hover {
+      background:  rgba(var(--bg-c),1.0);
+      font-weight: 600;
+    }
+  }
+}
+
+// .select.active .select__body {
+//   height: auto;
+// }
+
+.select.active {
+  z-index: 3;
+
+
+  .select__body {
+    box-shadow: 0px 4px 8px 0px rgba(77, 61, 4, 0.10);
+  }
+
+  .select__header > svg {
+    transform: scaleY(-1);
+  }
+}

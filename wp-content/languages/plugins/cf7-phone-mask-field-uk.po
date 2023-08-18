@@ -1,0 +1,68 @@
+# Translation of Plugins - Contact Form 7 &#8211; Phone mask field - Development (trunk) in Ukrainian
+# This file is distributed under the same license as the Plugins - Contact Form 7 &#8211; Phone mask field - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2022-09-12 10:28:02+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
+"X-Generator: GlotPress/4.0.0-alpha.1\n"
+"Language: uk_UA\n"
+"Project-Id-Version: Plugins - Contact Form 7 &#8211; Phone mask field - Development (trunk)\n"
+
+#: cf7-phone-mask-field.php:322
+msgid "Placeholder"
+msgstr "Заповнювач"
+
+#. Author of the plugin
+msgid "Ruslan Heorhiiev"
+msgstr "Руслан Георгієв"
+
+#. Description of the plugin
+msgid "This plugin adds a new field in which you can set the phone number entry mask or other to Contact Form 7."
+msgstr "Плагін додає нове текстове поле для якого можна встановити маску вводу, наприклад маску вводу номера телефону. Плагін доповнює Contact Form 7."
+
+#. Plugin Name of the plugin
+msgid "Contact Form 7 - Phone mask field"
+msgstr "Contact Form 7 - Phone mask field"
+
+#: cf7-phone-mask-field.php:346
+msgid "Insert Tag"
+msgstr "Вставити Тег"
+
+#: cf7-phone-mask-field.php:332
+msgid "Class attribute"
+msgstr "Атрибут Class"
+
+#: cf7-phone-mask-field.php:327
+msgid "Id attribute"
+msgstr "Атрибут Id"
+
+#: cf7-phone-mask-field.php:317
+msgid "Enter the mask for this field. <br /><code>Example: +_ (___) ___-__-__</code>"
+msgstr "Введіть маску для цього поля. <br /><code>Приклад: +380 (67) ___-__-__</code>"
+
+#: cf7-phone-mask-field.php:315
+msgid "Mask"
+msgstr "Маска"
+
+#: cf7-phone-mask-field.php:309
+msgid "Name"
+msgstr "Ім'я"
+
+#: cf7-phone-mask-field.php:303
+msgid "Required field"
+msgstr "Обов'язкове поле"
+
+#: cf7-phone-mask-field.php:299 cf7-phone-mask-field.php:302
+msgid "Field type"
+msgstr "Тип поля"
+
+#: cf7-phone-mask-field.php:292
+msgid "Generate a form-tag for a single-line plain text input field in which you can set the input mask."
+msgstr "Згенеруйте поле вводу тексту, якому можна встановити маску."
+
+#: cf7-phone-mask-field.php:271
+msgid "mask field"
+msgstr "маска вводу"
