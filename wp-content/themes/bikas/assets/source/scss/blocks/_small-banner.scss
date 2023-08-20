@@ -2,6 +2,10 @@
     background-color: rgba(var(--bg-c),1.0);
     overflow: hidden;
 
+    @media (max-width: 767px) {
+        display: none;
+    }
+
     &__inner {
         display: grid;
         align-items: center;

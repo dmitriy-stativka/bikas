@@ -43,6 +43,8 @@ if ( post_password_required() ) {
 	do_action( 'woocommerce_before_single_product_summary' );
 	?>
 
+	<h1><?php the_title();?></h1>
+	
 	<div class="summary entry-summary">
 		<?php
 		/**

@@ -67,6 +67,7 @@ class WPCode_Admin_Page_Loader {
 		require_once WPCODE_PLUGIN_PATH . 'includes/admin/pages/class-wpcode-admin-page-settings.php';
 		require_once WPCODE_PLUGIN_PATH . 'includes/admin/pages/class-wpcode-admin-page-click.php';
 		require_once WPCODE_PLUGIN_PATH . 'includes/admin/pages/class-wpcode-admin-page-pixel.php';
+		require_once WPCODE_PLUGIN_PATH . 'includes/admin/pages/class-wpcode-admin-page-file-editor.php';
 	}
 
 	/**
@@ -88,6 +89,7 @@ class WPCode_Admin_Page_Loader {
 		$this->pages['pixel']           = 'WPCode_Admin_Page_Pixel';
 		$this->pages['library']         = 'WPCode_Admin_Page_Library';
 		$this->pages['generator']       = 'WPCode_Admin_Page_Generator';
+		$this->pages['file_editor']     = 'WPCode_Admin_Page_File_Editor';
 		$this->pages['tools']           = 'WPCode_Admin_Page_Tools';
 		$this->pages['settings']        = 'WPCode_Admin_Page_Settings';
 		$this->pages['click']           = 'WPCode_Admin_Page_Click';
@@ -198,7 +200,7 @@ class WPCode_Admin_Page_Loader {
 		}
 		$custom = array();
 
-		$custom['pro'] = sprintf(
+		$custom['wpcodepro'] = sprintf(
 			'<a href="%1$s" aria-label="%2$s" target="_blank" rel="noopener noreferrer" 
 				style="color: #00a32a; font-weight: 700;" 
 				onmouseover="this.style.color=\'#008a20\';" 
