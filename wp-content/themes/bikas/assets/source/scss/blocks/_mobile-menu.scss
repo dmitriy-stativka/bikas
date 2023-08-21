@@ -1,0 +1,42 @@
+.burger-btn {
+    @include for-tablet {
+        display: none;
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+
+
+    color: rgba(var(--cl-a),1.0);
+    font-family: var(--font-family);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.burger {
+    @include burger;
+
+    color: rgba(var(--cl-b),1.0);
+}
+
+.mobile-menu {
+    @include for-tablet {
+        display: none;
+    }
+    z-index: 25;
+    transform: translateX(100%);
+    position: fixed;
+    top: var(--header-height);
+    height: calc(100vh - var(--header-height));
+    right: 0;
+    background-color: rgba(var(--bg-c),1.0);
+    transition: transform .2s;
+
+    &.active {
+        transform: translateX(0);
+    }
+}

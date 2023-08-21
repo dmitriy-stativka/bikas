@@ -4,7 +4,7 @@
     <div class="container">
         <div class="small-banner__inner">
             <span class="small-banner__value">
-                <?php the_field('sale', 'options');?>
+                -25%
             </span>
 
            
@@ -17,13 +17,13 @@
 
                 <div class="small-banner__content">
                     <span class="small-banner__descr">
-                        <?php the_field('title_sale', 'options');?>
+                        Демісезон
                     </span>
                     <h2 class="small-banner__title">
-                        <?php the_field('subtitle_sale', 'options');?>
+                        Розпродаж
                     </h2>
 
-                    <div class="counter" data-seconds="<?php the_field('timer', 'options');?>"></div>
+                    <div class="counter" data-seconds="40000"></div>
                 </div>
 
             </div>
