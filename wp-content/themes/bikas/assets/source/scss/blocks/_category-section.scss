@@ -4,6 +4,10 @@
 
     .catalog-aside {
         margin-top: calc(var(--sorting-height) + var(--inner-gap));
+
+        @include tablet {
+            display: none;
+        }
     }
 
     .products {
@@ -17,10 +21,18 @@
         &::after {
             content: none !important;
         }
+
+        @include small-tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 
     &__top {
         grid-column: 1/-1;
+
+        @include tablet {
+            align-items: center;
+        }
     }
 
     &__inner {
@@ -28,9 +40,9 @@
         gap: 80px 20px;
         grid-template-columns: 1fr 3fr;
 
-        @media (max-width: 767px) {
-            display: flex;
-            flex-direction: column;
+        @include tablet {
+            grid-template-columns: 100%;
+            gap: 40px 20px;
         }
     }
 
@@ -57,6 +69,10 @@
                 font-style: normal;
                 font-weight: 400;
                 line-height: 100%;
+            }
+
+            @include tablet {
+                display: none;
             }
         }
 

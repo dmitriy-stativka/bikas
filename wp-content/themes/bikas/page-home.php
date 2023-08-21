@@ -110,17 +110,6 @@ get_header(); ?>
             </div>
         </section>
             
-        <!-- <div class="home-contant">
-            <?php the_content(9495); ?>
-        </div> -->
-        <div class="home-widget">
-            <?php
-            if (is_active_sidebar('index-page')) : ?>
-                <?php
-                dynamic_sidebar('index-page'); ?>
-            <?php
-            endif; ?>
-        </div>
     </div>
 <?php
 get_footer(); ?>

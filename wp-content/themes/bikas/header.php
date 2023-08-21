@@ -19,7 +19,7 @@ $build_folder = get_template_directory_uri() . '/assets/build/'
 <head>
     <meta name="facebook-domain-verification" content="28844q6h21lgntdm53l2e9gwpoot8s" />
     <meta charset="<?php bloginfo('charset'); ?>" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title><?php wp_title('|', TRUE, 'right'); ?></title>
     <link rel="preconnect" href="https://bikas.com.ua/">
     <link rel="dns-prefetch" href="https://bikas.com.ua/">
@@ -103,6 +103,14 @@ $build_folder = get_template_directory_uri() . '/assets/build/'
             </div>
             <div class="container">
                 <div class="header">
+                    <div class="burger-btn">
+                        <span>Меню</span>
+                        <button class="burger">
+                            <span class="burger__line"></span>
+                        </button>
+                    </div>
+                    
+
                     <a href="/" class="header__logo">
                         <?php $logo_icon = get_field('logo_icon', 'options');
                         if ( $logo_icon ) : ?>
@@ -139,15 +147,15 @@ $build_folder = get_template_directory_uri() . '/assets/build/'
 
 
                     <div class="header__coll">
-                        <button class="header__category">
-                            категорії 
+                        <button class="header__category catalog-trigger">
+                            <span>категорії</span>
                             <svg width='20' height='20'>
                                 <use href='<?php echo $build_folder?>img/sprite/sprite.svg#menu'></use>
                             </svg>
                         </button>  
 
                         <div class="header__buttons">
-                          <button class="header__btn" data-btn-modal="favorite">
+                          <button class="header__btn" data-btn-modal="dialog">
                             <svg width='20' height='20'>
                                 <use href='<?php echo $build_folder?>img/sprite/sprite.svg#favorite'></use>
                             </svg>
@@ -170,93 +178,20 @@ $build_folder = get_template_directory_uri() . '/assets/build/'
                 </div>
             </div>
 
-
         </header>
-
-
-        <!-- <div id="mobile-header">
-            <div id="mobile-nav">
-                <a href="#" id="mobile-menu-button" class="icon-menu"></a>
-                <a href="#" id="mobile-category-button" class="icon-doc-text-inv"></a>
-                <a href="#" id="mobile-search-button" class="icon-search"></a>
-                <a href="#cart-dialog" id="mobile-shop-button"
-                    class="icon-shop"><span><?php echo WC()->cart->get_cart_contents_count(); ?></span></a>
-                <a href="#" id="mobile-phone-button" class="icon-phone"></a>
-                <a href="#callback-dialog" id="mobile-callback-button" class="icon-volume-control-phone"></a>
-                <div id="mobile-logo"><a href="#">Bikas</a></div>
-            </div>
-            <nav id="mobile-menu">
-                <?php wp_nav_menu([
-                'menu' => 'mobile-menu',
-                'items_wrap' => '%3$s',
-                'container' => FALSE,
-              ]); ?>
-            </nav>
-            <div id="mobile-phone">
-                <div class="icon-phone"><span class="phone-number">+38 (093) <span
-                            class="phone-number-bold">334-52-61</span></span></div>
-                <div class="icon-phone"><span class="phone-number">+38 (096) <span
-                            class="phone-number-bold">251-64-52</span></span></div>
-            </div>
-            <div id="mobile-search">
-                <form role="search" method="get" class="woocommerce-product-search" action="https://bikas.com.ua/">
-                    <input type="search" id="woocommerce-product-search-field" class="search-field"
-                        placeholder="Поиск товаров&hellip;" value="" name="s" title="Искать:"
-                        style="width: calc(100% - 50px);" />
-                    <input type="submit" class="icon-fontello" value="&#xe802;" />
-                    <input type="hidden" name="post_type" value="product" />
-                </form>
-            </div>
-        </div> -->
-        <!-- <header id="site-header">
-            <div id="header-top">
-                <div class="header-inner">
-
-                    <div class="icon-location header-inner-one"><span><a href="https://bikas.com.ua/kontakty/">Адреса
-                                магазину</a></span>
-                    </div>
-                    <div class="icon-volume-control-phone header-inner-one"><span><a href="#callback-dialog">Зворотний
-                                дзвінок</a></span>
-                    </div>
-                    <div class="icon-user header-inner-one"><span><a href="https://bikas.com.ua/my-account/">Вхід в
-                                особистий кабінет</a></span>
-                    </div>
-                </div>
-            </div>
-            <div id="header-contact">
-                <div class="header-inner">
-                    <?php if (is_home()) { ?>
-                    <div id="header-logo"></div>
-                    <?php } else { ?>
-                    <a href="<?php echo esc_url(home_url('/')); ?>"
-                        title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
-                        <div id="header-logo"></div>
-                    </a>
-                    <?php } ?>
-                    <div id="header-phone">
-                        <div class="icon-phone"><span class="phone-number">+38 (093) <span
-                                    class="phone-number-bold">334-52-61</span> (Viber)</span>
-                        </div>
-                        <div class="icon-phone"><span class="phone-number">+38 (096) <span
-                                    class="phone-number-bold">251-64-52</span></span>
-                        </div>
-
-                        
-                    </div>
-                    <a href="#cart-dialog">
-                        <div id="header-cart">
-                            <div id="cart-total"><?php echo WC()->cart->get_cart_contents_count(); ?></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-        </header> -->
+        <?php load_template(get_template_directory() . '/components/mobile-menu.php', true); ?>                     
         <div id="main" class="wrapper">
             <?php if (is_active_sidebar('sidebar-1')) : ?>
-            <div id="secondary" class="widget-area catalog-menu" role="complementary">
-                <?php dynamic_sidebar('sidebar-1'); ?>
-            </div><!-- #secondary -->
+                <div class="catalog-menu">
+                    <div class="catalog-menu__top">
+                            <svg width='40' height='40'>
+                                <use href='<?php echo $build_folder?>img/sprite/sprite.svg#menu'></use>
+                            </svg>
+
+                        <button class="catalog-menu__close burger catalog-trigger">
+                            <span class="burger__line"></span>
+                        </button>
+                    </div>
+                    <?php dynamic_sidebar('sidebar-1'); ?>
+                </div>
             <?php endif; ?>
-
-

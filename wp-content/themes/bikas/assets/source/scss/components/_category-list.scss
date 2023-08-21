@@ -1,7 +1,16 @@
 .category-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+
+    @include small-tablet {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+
+    @include mobile {
+        grid-template-columns: 100%;
+        margin: 0 -20px;
+    }
 
     &__link {
         width: 100%;
@@ -14,6 +23,10 @@
             width: inherit;
             object-fit: cover;
             object-position: top;
+
+            @include mobile {
+                aspect-ratio: 1/1;
+            }
         }
     }
 
@@ -31,6 +44,11 @@
 
                 svg {
                     margin-left: auto;
+                }
+
+                @include mobile {
+                    max-height: 350px;
+                    height: 350px;
                 }
             }
 
