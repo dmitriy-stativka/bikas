@@ -2,9 +2,9 @@
 Contributors: andergmartins, htmgarcia, publishpress, stevejburge, rochdesigns
 Tags: slideshow, slider, image slider, carousel, gallery, flex slider, wordpress slider, nivoslider, rotating banner, image sliders, responsive slideshow, seo slideshow, unsplash, post sliders, video sliders, YouTube sliders, Vimeo sliders, HTML sliders, external URL sliders, layer sliders, best WordPress slider, best slider, best slideshow, best carousel, easy slider, easy slideshow, flex slider, woocommerce slider, woocommerce slideshow, video slider
 Requires at least: 3.5
-Stable tag: 3.33.0
+Stable tag: 3.36.0
 Requires PHP: 5.6
-Tested up to: 6.2.2
+Tested up to: 6.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ The best slider, gallery, and carousel plugin for WordPress. Responsive and easy
 
 == Description ==
 
-With MetaSlider you can create a powerful, SEO-optimized slider, slideshow, carousel, or gallery in minutes with the world’s #1 responsive WordPress slider plugin. MetaSlider is the best choice for image, photo, video (YouTube and Vimeo), layer, html, WooCommerce, and post feed sliders!
+With MetaSlider you can create a powerful, SEO-optimized slider, slideshow, carousel, or gallery in minutes with the world’s #1 responsive WordPress slider plugin. MetaSlider is the best choice for image, photo, video (YouTube and Vimeo), layer, HTML, WooCommerce, and post feed sliders!
 
 [vimeo https://vimeo.com/393891282]
 
@@ -352,6 +352,26 @@ Our official name is MetaSlider. Don't worry - we'll still understand if you cal
 
 The format is based on [Keep a Changelog recommendations](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
+
+= [3.36.0] - 14 Aug, 2023 =
+
+* FIXED: Accessibility issue for slideshow navigation, #565;
+* FIXED: Delay the review banner #556;
+* FIXED: Theme class added to slideshows with no theme, #477;
+* CHANGED: Change button style for opt-in pop-up box, #585;
+* CHANGED: Update color for listed custom themes, #591;
+
+= [3.35.0] - 10 Aug, 2023 =
+
+* FIXED: Revert all changes from 3.34.0 returning the state to 3.33.0 for fixing a few errors;
+
+= [3.34.0] - 10 Aug, 2023 =
+
+* FIXED: Accessibility issue for slideshow navigation, #565;
+* FIXED: Delay the review banner #556;
+* FIXED: Theme class added to slideshows with no theme, #477;
+* CHANGED: Change button style for opt-in pop-up box, #585;
+* CHANGED: Update color for listed custom themes, #591;
 
 = [3.33.0] - 05 Jul, 2023 =
 

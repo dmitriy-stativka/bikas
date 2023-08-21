@@ -2,9 +2,9 @@
 Contributors: WPbeginner, smub, gripgrip, wpcodeteam
 Tags: code, css, php, footer, functions, content, facebook pixel, footer code, footer scripts, footers, google analytics, head, header, header code, header scripts, headers, insert, insert code, insert scripts, js, meta, meta tags, scripts, html, javascript, multisite, code snippets
 Requires at least: 4.6
-Tested up to: 6.2
+Tested up to: 6.3
 Requires PHP: 5.5
-Stable tag: 2.1.0
+Stable tag: 2.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -307,6 +307,11 @@ Thank you
 Syed Balkhi
 
 == Changelog ==
+
+= 2.1.1 =
+* New: Easily duplicate a snippet with all of its settings with the new Duplicate link in the list of snippets.
+* Fix: Taxonomy page conditional logic was not being correctly assigned for category and tags archives.
+* Tweak: Adjust admin bar markup to avoid using a heading.
 
 = 2.1.0 =
 * New: See exactly which scripts and snippets are loaded on the current page with the WPCode admin bar info menu.

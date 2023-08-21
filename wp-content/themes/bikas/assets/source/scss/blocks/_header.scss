@@ -1,6 +1,15 @@
+header {
+  position: relative;
+  z-index: 25;
+}
+
 .header-top {
   background-color: rgba(var(--bg-a), 1.0);
   padding: 10px 0;
+
+  @include tablet {
+    display: none;
+  }
 
   &__inner {
     display: flex;
@@ -50,16 +59,41 @@
 
 .header {
   padding: 20px 0;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   justify-content: space-between;
   gap: clamp(20px, 4.478vw, 50px);
+
+  @include tablet {
+    padding: 12px 0;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    max-width: Min(20.563vw, 292px);
+
+    @include tablet {
+      max-width: 150px;
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
 
   &__center {
     display: flex;
     width: 100%;
     flex-direction: column;
     gap: 22px;
+
+    @include tablet {
+      display: none;
+    }
   }
 
   &__search {
@@ -81,8 +115,9 @@
   &__nav {
     ul {
       display: flex;
-    align-items: center;
-    gap: clamp(25px, 4.104vw, 55px);
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px clamp(25px, 4.104vw, 55px);
     }
 
     a {
@@ -104,14 +139,13 @@
 
   &__category {
     // width: 100%;
-    width: 210px;
+    width: Min(14.789vw, 210px);
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: clamp(15px, 3.731vw, 50px);
     border: 1px solid var(--br-b);
-
 
     color: rgba(var(--cl-c),1.0);
     font-family: var(--font-family2);
@@ -121,6 +155,34 @@
     line-height: normal;
     letter-spacing: 1.6px;
     text-transform: uppercase;
+
+    svg {
+      fill: currentColor;
+    }
+
+    @include tablet {
+      color: rgba(var(--cl-b),1.0);
+      background-color: rgba(var(--bg-c),1.0);
+      border-radius: 0px 10px 10px 0px;
+      border-color: var(--br-e);
+      gap: 0;
+      width: 45px;
+      height: 54px;
+      position: fixed;
+      z-index: 10;
+
+      top: 20%;
+      left: 0;
+
+      span {
+        display: none;
+      }
+
+      svg {
+        width: 28px;
+        height: 28px;
+      }
+    }
   }
 
   &__coll {
@@ -141,6 +203,10 @@
       fill: transparent;
     }
 
+    * {
+      pointer-events: none;
+    }
+
     &-icon {
       position: absolute;
       background-color: rgba(var(--cl-c),1.0);
@@ -157,5 +223,17 @@
 
   &__numbers {
     grid-column: 1/-1;
+
+    @include tablet {
+      display: none;
+    }
   }
 }
+
+
+header {
+  @include tablet {
+    background-color: rgba(var(--bg-c),1.0);
+  }
+}
+

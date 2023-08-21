@@ -52,6 +52,8 @@ class WPCode_Admin_Page_Code_Snippets extends WPCode_Admin_Page {
 		add_filter( 'default_hidden_columns', array( $this, 'hide_columns' ), 10, 2 );
 
 		add_filter( 'screen_settings', array( $this, 'add_custom_screen_option' ), 10, 2 );
+		// Hide the duplicated parameter from the URL.
+		add_filter( 'removable_query_args', array( $this, 'remove_query_arg_from_url' ) );
 	}
 
 	/**
@@ -150,6 +152,14 @@ class WPCode_Admin_Page_Code_Snippets extends WPCode_Admin_Page {
 		);
 		if ( $failed ) {
 			$message['error'] = $failed;
+		}
+
+		if ( 'duplicate' === $action ) {
+			foreach ( $ids as $id ) {
+				// Load all the snippet data in the object.
+				$snippet = new WPCode_Snippet( $id );
+				$snippet->duplicate();
+			}
 		}
 
 		wpcode()->cache->cache_all_loaded_snippets();
@@ -407,7 +417,19 @@ class WPCode_Admin_Page_Code_Snippets extends WPCode_Admin_Page {
 		$screen_settings .= '</label>';
 		$screen_settings .= '</fieldset>';
 
-
 		return $screen_settings;
+	}
+
+	/**
+	 * Remove the duplicated parameter from the URL.
+	 *
+	 * @param array $args The arguments that should be removed from the URL.
+	 *
+	 * @return array
+	 */
+	public function remove_query_arg_from_url( $args ) {
+		$args[] = 'duplicated';
+
+		return $args;
 	}
 }

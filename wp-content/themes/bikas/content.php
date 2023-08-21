@@ -10,7 +10,7 @@
  */
 ?>
 
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
 				<div class="featured-post">
 					<?php _e( 'Featured post', 'twentytwelve' ); ?>
@@ -51,4 +51,4 @@
 		<?php endif; ?>
 
 
-	</article><!-- #post -->
+	</div><!-- #post -->

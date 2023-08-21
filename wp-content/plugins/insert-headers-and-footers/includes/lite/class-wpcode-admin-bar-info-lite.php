@@ -90,7 +90,7 @@ class WPCode_Admin_Bar_Info_Lite extends WPCode_Admin_Bar_Info {
 
 		$html = '<div class="wpcode-admin-bar-submenu-upsell">';
 
-		$html .= '<h4>' . esc_html__( 'Page Scripts is a Pro Feature', 'insert-headers-and-footers' ) . '</h4>';
+		$html .= '<span class="wpcode-heading">' . esc_html__( 'Page Scripts is a Pro Feature', 'insert-headers-and-footers' ) . '</span>';
 		$html .= '<p>' . esc_html__( 'While you can always use global snippets, in the PRO version you can easily add page-specific scripts and snippets directly from the post edit screen.', 'insert-headers-and-footers' ) . '</p>';
 		$html .= '<a class="wpcode-button" href="' . esc_url( wpcode_utm_url( 'https://wpcode.com/lite/', 'admin-bar', 'page-scripts' ) ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Upgrade to Pro and Unlock Page Scripts', 'insert-headers-and-footers' ) . '</a>';
 

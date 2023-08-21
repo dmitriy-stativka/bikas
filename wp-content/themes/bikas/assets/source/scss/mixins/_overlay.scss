@@ -1,16 +1,14 @@
 @mixin overlay {
   position: fixed;
-  height: calc(100% - var(--header-height));
+  height: 100%;
+  display: flex;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 10;
-
-  height: -webkit-fill-available;
+  z-index: 20;
   padding: 20px 20px;
-  overflow-y: scroll;
-
-  background: rgba(var(--bg-b),.7);
+  overflow-y: auto;
+  background:  rgba(var(--bg-a),.8);
 
   visibility: hidden;
   opacity: 0;
@@ -25,31 +23,25 @@
   }
 
   &.active {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-
-    visibility: visible;
-    opacity: 1;
-
-    transition: all 0.6s;
-    z-index: 50;
-    pointer-events: initial;
-  }
-
-  &.active-mode {
     z-index: 100;
-
-    display: grid;
-    justify-content: center;
-    align-items: center;
-
-
     visibility: visible;
     opacity: 1;
 
     transition: all 0.6s;
 
     pointer-events: initial;
+
+    &-mode {
+      visibility: visible;
+      opacity: 1;
+
+      transition: all 0.6s;
+
+      pointer-events: initial;
+      z-index: 20;
+    }
   }
+
+
+
 }

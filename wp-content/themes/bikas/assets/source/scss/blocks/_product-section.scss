@@ -1,5 +1,7 @@
 .product-section {
     padding: 50px 0;
+    max-width: 100%;
+    width: 100vw;
 
    &__inner {
     display: flex;
@@ -22,6 +24,11 @@
     display: flex;
     align-items: center;
 
-    margin: 0 -44px;
+    // margin: 0 -44px;
+
+    @include small-tablet {
+      gap: 10px;
+      margin: 0 -20px;
+    }
   }
 }

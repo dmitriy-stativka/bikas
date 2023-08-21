@@ -1,0 +1,370 @@
+.msweb_ms-reviews-reviews * {
+    display: block;
+    position: relative;
+    font-size: 14px;
+    line-height: 1;
+    color: #000;
+    background: unset;
+    padding: 0;
+    margin: 0;
+    border: none;
+    text-align: left;
+    font-weight: 400;
+}
+
+.msweb_ms-reviews-reviews h4 {
+    font-size: 22px;
+    margin-bottom: 32px;
+}
+
+.msweb_ms-reviews-reviews {
+    background: #fff;
+}
+
+.msweb_ms-reviews-wrapper {
+    max-height: 570px;
+    overflow: auto;
+}
+
+.msweb_ms-reviews-reviews label {
+    cursor: pointer;
+}
+
+.msweb_ms-reviews-preloader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.msweb_ms-reviews-loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(43, 91, 105, 0.18);
+    display: none;
+}
+
+.msweb_ms-reviews-loader img {
+    position: absolute;
+    margin: auto;
+    width: 180px;
+    height: 100px;
+    display: block;
+    z-index: 11;
+}
+
+.msweb_ms-reviews-reviews {
+    display: block;
+    padding: 20px 0 20px 30px;
+    border-radius: 5px;
+    /*box-shadow: inset 0 0 7px 0 #00000024;*/
+}
+
+.msweb_ms-reviews-review-entry {
+    /*padding: 30px;*/
+    background: #fff;
+    min-height: 75px;
+    /*border-style: dotted;*/
+    /*border-width: 1px;*/
+    /*box-shadow: inset 0 0 4px 2px #00000040;*/
+}
+
+.msweb_ms-reviews-rating {
+    background: url(../img/rate.jpg);
+    width: 140px;
+    height: 26px;
+    background-size: 140px;
+    margin: 10px;
+}
+
+.msweb_ms-reviews-rating div {
+    width: 28px;
+    height: 26px;
+    cursor: pointer;
+    float: left;
+}
+
+.msweb_ms-reviews-usernickname {
+    /*padding: 5px;*/
+    /*border-style: dotted;*/
+    /*border-width: 1px;*/
+    max-width: 250px;
+    /*box-shadow: inset 0 0 4px 2px #00000040;*/
+    margin: 20px;
+    width: 100%;
+}
+
+.msweb_ms-reviews-userAvatar {
+    width: 80px;
+}
+
+.msweb_ms-reviews-userAvatar img {
+    width: 100%;
+}
+
+/* ===[ Begin Chunky Button ]=== */
+.msweb_ms-reviews-chunky {
+    margin: 20px 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.msweb_ms-reviews-chunky span {
+    /* Normal State */
+    padding: 4px 15px 7px 15px;
+    width: auto;
+    height: auto;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    text-decoration: none;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.50);
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.50);
+    border-top: 1px solid rgba(0, 0, 0, 0.001);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0px 1px 3px rgba(0, 0, 0, 0.18), inset 0px -3px 0px rgba(0, 0, 0, 0.35), inset 0px 14px 14px rgba(255, 255, 255, 0.10);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0px 1px 3px rgba(0, 0, 0, 0.18), inset 0px -3px 0px rgba(0, 0, 0, 0.35), inset 0px 14px 14px rgba(255, 255, 255, 0.10);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0px 1px 3px rgba(0, 0, 0, 0.18), inset 0px -3px 0px rgba(0, 0, 0, 0.35), inset 0px 14px 14px rgba(255, 255, 255, 0.10);
+    -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0px 1px 3px rgba(0, 0, 0, 0.18), inset 0px -3px 0px rgba(0, 0, 0, 0.35), inset 0px 14px 14px rgba(255, 255, 255, 0.10);
+    -ms-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0px 1px 3px rgba(0, 0, 0, 0.18), inset 0px -3px 0px rgba(0, 0, 0, 0.35), inset 0px 14px 14px rgba(255, 255, 255, 0.10);
+    cursor: pointer;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
+
+.msweb_ms-reviews-chunky span:hover {
+    /* Hover State */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0px 1px 3px rgba(0, 0, 0, 0.18), inset 0px -3px 0px rgba(0, 0, 0, 0.35), inset 0px 14px 14px rgba(255, 255, 255, 0.25);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0px 1px 3px rgba(0, 0, 0, 0.18), inset 0px -3px 0px rgba(0, 0, 0, 0.35), inset 0px 14px 14px rgba(255, 255, 255, 0.25);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0px 1px 3px rgba(0, 0, 0, 0.18), inset 0px -3px 0px rgba(0, 0, 0, 0.35), inset 0px 14px 14px rgba(255, 255, 255, 0.25);
+    -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0px 1px 3px rgba(0, 0, 0, 0.18), inset 0px -3px 0px rgba(0, 0, 0, 0.35), inset 0px 14px 14px rgba(255, 255, 255, 0.25);
+    -ms-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0px 1px 3px rgba(0, 0, 0, 0.18), inset 0px -3px 0px rgba(0, 0, 0, 0.35), inset 0px 14px 14px rgba(255, 255, 255, 0.25);
+    -webkit-animation: msweb_ms-reviews-glow 1s infinite ease-in-out;
+    cursor: pointer;
+}
+
+.msweb_ms-reviews-chunky span:active {
+    /* Active State (clicked on) */
+    padding: 6px 15px 5px 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.55);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0px 2px 1px rgba(255, 255, 255, 0.50), inset 0px 1px 4px rgba(0, 0, 0, 0.35), inset 0px -14px 14px rgba(255, 255, 255, 0.10);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0px 2px 1px rgba(255, 255, 255, 0.50), inset 0px 1px 4px rgba(0, 0, 0, 0.35), inset 0px -14px 14px rgba(255, 255, 255, 0.10);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0px 2px 1px rgba(255, 255, 255, 0.50), inset 0px 1px 4px rgba(0, 0, 0, 0.35), inset 0px -14px 14px rgba(255, 255, 255, 0.10);
+    -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0px 2px 1px rgba(255, 255, 255, 0.50), inset 0px 1px 4px rgba(0, 0, 0, 0.35), inset 0px -14px 14px rgba(255, 255, 255, 0.10);
+    -ms-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0px 2px 1px rgba(255, 255, 255, 0.50), inset 0px 1px 4px rgba(0, 0, 0, 0.35), inset 0px -14px 14px rgba(255, 255, 255, 0.10);
+    -webkit-animation: none;
+    cursor: pointer !important;
+}
+
+.msweb_ms-reviews-chunky1 span {
+    background: #c0c0c0
+}
+
+.msweb_ms-reviews-chunky14 span {
+    background: #669900
+}
+
+/* ===[ Start Glow Animation ]=== */
+
+@-webkit-keyframes msweb_ms-reviews-glow {
+    0% {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0px 1px 3px rgba(0, 0, 0, 0.18), inset 0px -3px 0px rgba(0, 0, 0, 0.35), inset 0px 14px 14px rgba(255, 255, 255, 0.35);
+        -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0px 1px 3px rgba(0, 0, 0, 0.18), inset 0px -3px 0px rgba(0, 0, 0, 0.35), inset 0px 14px 14px rgba(255, 255, 255, 0.35);
+        -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0px 1px 3px rgba(0, 0, 0, 0.18), inset 0px -3px 0px rgba(0, 0, 0, 0.35), inset 0px 14px 14px rgba(255, 255, 255, 0.35);
+        -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0px 1px 3px rgba(0, 0, 0, 0.18), inset 0px -3px 0px rgba(0, 0, 0, 0.35), inset 0px 14px 14px rgba(255, 255, 255, 0.35);
+        -ms-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0px 1px 3px rgba(0, 0, 0, 0.18), inset 0px -3px 0px rgba(0, 0, 0, 0.35), inset 0px 14px 14px rgba(255, 255, 255, 0.35);
+    }
+
+    100% {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0px 1px 3px rgba(0, 0, 0, 0.18), inset 0px -3px 0px rgba(0, 0, 0, 0.35), inset 0px 14px 14px rgba(255, 255, 255, 0.18);
+        -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0px 1px 3px rgba(0, 0, 0, 0.18), inset 0px -3px 0px rgba(0, 0, 0, 0.35), inset 0px 14px 14px rgba(255, 255, 255, 0.18);
+        -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0px 1px 3px rgba(0, 0, 0, 0.18), inset 0px -3px 0px rgba(0, 0, 0, 0.35), inset 0px 14px 14px rgba(255, 255, 255, 0.18);
+        -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0px 1px 3px rgba(0, 0, 0, 0.18), inset 0px -3px 0px rgba(0, 0, 0, 0.35), inset 0px 14px 14px rgba(255, 255, 255, 0.18);
+        -ms-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35), 0px 1px 3px rgba(0, 0, 0, 0.18), inset 0px -3px 0px rgba(0, 0, 0, 0.35), inset 0px 14px 14px rgba(255, 255, 255, 0.18);
+    }
+}
+
+/* ===[ End Glow Animation ]=== */
+/* ===[ End Chunky Button ]=== */
+
+
+.msweb_ms-reviews-r-userAvatar img {
+    width: 100%;
+}
+
+.msweb_ms-reviews-r-userAvatar {
+    width: 50px;
+    height: 50px;
+}
+
+.msweb_ms-reviews-r-rate {
+    background: url(../img/rate.jpg);
+    width: 100px;
+    height: 18px;
+    background-size: 100px;
+    margin: 10px;
+    background-position-y: 0;
+}
+
+.msweb_ms-reviews-rate-0 {
+    background-position-y: 0px;
+}
+
+.msweb_ms-reviews-rate-1 {
+    background-position-y: -19px;
+}
+
+.msweb_ms-reviews-rate-2 {
+    background-position-y: -37px;
+}
+
+.msweb_ms-reviews-rate-3 {
+    background-position-y: -55px;
+}
+
+.msweb_ms-reviews-rate-4 {
+    background-position-y: -73px;
+}
+
+.msweb_ms-reviews-rate-5 {
+    background-position-y: -91px;
+}
+
+.msweb_ms-reviews-r-userReview {
+    padding: 10px;
+}
+
+.msweb_ms-reviews-r-user-review {
+    min-height: 140px;
+    display: table;
+    width: 100%;
+    border-bottom: 1px #f3f2f2 solid;
+    margin-bottom: 13px;
+}
+
+.msweb_ms-reviews-r-user-nickName {
+    padding-left: 10px;
+}
+
+span.msweb_ms-reviews-delete-review {
+    color: red;
+    font-weight: bolder;
+    text-decoration: underline;
+    position: relative;
+    font-size: 10pt;
+    cursor: pointer;
+}
+
+.msweb_ms-reviews-r-user-review.msweb_ms-reviews-r-user-review-admin:hover {
+    background: #fefeff;
+}
+
+.msweb_ms-reviews-user-info-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.msweb_ms-reviews-reviews label,
+.msweb_ms-reviews-reviews input[type=checkbox] {
+    display: inline-block;
+}
+
+.msweb_ms-reviews-options-row {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.msweb_ms-reviews-new-review-form-show {
+    text-align: center;
+    font-size: 16px;
+    box-shadow: inset #ccc 0 0 3px;
+    padding: 8px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-right: 30px;
+    cursor: pointer;
+    transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+}
+
+.msweb_ms-reviews-new-review-form-show:hover {
+    background: #f0f0f1;
+}
+
+.msweb_ms-reviews-new-review-form {
+    display: none;
+    padding-right: 30px;
+    padding-top: 20px;
+}
+
+.msweb_ms-reviews-new-review-form.visible {
+    display: block;
+}
+
+.msweb_ms-reviews-r-user-info {
+    display: flex;
+}
+
+
+.msweb_ms-reviews-wrapper::-webkit-scrollbar {
+    width: 8px;
+    background-color: #f2f4f7;
+}
+
+.msweb_ms-reviews-wrapper::-webkit-scrollbar-thumb {
+    background-color: #b0c8e5;
+    border-radius: 6px;
+}
+
+.msweb_ms-reviews-wrapper::-webkit-scrollbar:hover {
+    background-color: rgba(31, 31, 34, 0.1);
+}
+
+.msweb_ms-reviews-wrapper::-webkit-scrollbar-thumb:hover {
+    background-color: #a2b7d0;
+}
+
+form#msweb_ms-reviews-login {
+    padding: 20px;
+}
+
+form#msweb_ms-reviews-login input[type=text], form#msweb_ms-reviews-login input[type=password] {
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+    min-width: 300px;
+    margin-bottom: 10px;
+}
+
+form#msweb_ms-reviews-login input#wp-submit {
+    background: #00a76a;
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.msweb_ms-reviews-reviews script {
+    display: none;
+}

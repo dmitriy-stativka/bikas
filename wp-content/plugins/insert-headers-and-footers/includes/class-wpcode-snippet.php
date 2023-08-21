@@ -1045,4 +1045,38 @@ class WPCode_Snippet {
 	public function set_attribute( $key, $value ) {
 		$this->attributes[ $key ] = $value;
 	}
+
+	/**
+	 * Duplicates a snippet with all its data.
+	 *
+	 * @return void
+	 */
+	public function duplicate() {
+		$this->get_data_for_caching();
+		$this->get_note();
+		$this->get_tags();
+		$this->get_custom_shortcode();
+		$this->get_device_type();
+		$this->get_schedule();
+		// Add a suffix to the title.
+		$this->title = $this->get_title() . ' - Copy';
+		// Make sure the snippet is not active.
+		$this->post_data->post_status = 'draft';
+		/**
+		 * Fires before a snippet that is about to be duplicated is saved.
+		 *
+		 * @param WPCode_Snippet $snippet The snippet object.
+		 */
+		do_action( 'wpcode_before_snippet_duplicated', $this );
+		// Remove the id to create a new snippet.
+		unset( $this->id );
+		// Save the new snippet.
+		$this->save();
+		/**
+		 * Fires after a snippet has been duplicated.
+		 *
+		 * @param WPCode_Snippet $snippet The snippet object.
+		 */
+		do_action( 'wpcode_after_snippet_duplicated', $this );
+	}
 }

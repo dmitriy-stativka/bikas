@@ -3,8 +3,8 @@ import './components/slider';
 import './components/smallJS';
 import './components/timer';
 // import './components/accordions';
-// import './components/lightgalery';
+import './components/modals';
 // import './components/tabs';
-// import './components/burger-menu';
+import './components/burger-menu';
 
 
