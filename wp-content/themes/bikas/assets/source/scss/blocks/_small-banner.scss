@@ -1,5 +1,5 @@
 .small-banner {
-    background-color: rgba(var(--bg-c),1.0);
+    background-color: rgba(var(--bg-d),1.0);
     overflow: hidden;
 
     &__inner {
@@ -8,6 +8,11 @@
         grid-template-columns: auto 60%;
 
         justify-content: space-between;
+
+        @include tablet {
+            position: relative;
+            grid-template-columns: 100%;
+        }
     }
 
     &__coll {
@@ -27,22 +32,58 @@
             right: -100vw;
             position:absolute;
             content: '';
+        }
 
+        @include tablet {
+            justify-content: center;
+            margin: 0 -20px;
+            border-radius: 50px 50px 0px 0px;
         }
     }
 
     &__image {
         display: flex;
+
+        @include tablet {
+            position: absolute  ;
+            right: 15vw;
+            top: 0;
+            transform: translateY(-100%);
+            height: 300px;
+
+            img {
+                width: 100%;
+                height: inherit;
+            }
+        }
+
+        @include mobile {
+            right: 0;
+        }
+
+        @include ios {
+            right: -10%;
+        }
     }
 
     &__value {
         color: rgba(var(--cl-a),1.0);
         font-family: var(--font-family3);
-        font-size: 200px;
+        font-size: clamp(100px, 14.085vw, 200px);
         font-style: normal;
         font-weight: 400;
         line-height: normal;
         letter-spacing: 20px;
+
+        @include tablet {
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+
+            font-size: clamp(85px, 20.085vw, 200px);
+        }
     }
 
     &__content {
@@ -61,12 +102,22 @@
         font-style: normal;
         
         line-height: normal;
+
+        @include tablet {
+            min-height: initial;
+            padding: 40px 0 20px;
+        }
     }
 
     &__title {
-        font-size: 100px;
-        line-height: 100px;
+        font-size: clamp(40px, 7.042vw, 100px);
+        line-height: clamp(40px, 7.042vw, 100px);
         font-weight: 700;
+
+        @include tablet {
+            font-size: clamp(40px, 10.042vw, 100px);
+            line-height: clamp(40px, 10.042vw, 100px);
+        }
     }
 
     &__descr {

@@ -228,7 +228,7 @@ class WPCode_Conditional_Page extends WPCode_Conditional_Type {
 		if ( is_null( $wp_query ) ) {
 			return array();
 		}
-		if ( is_tax() ) {
+		if ( is_tax() || is_category() || is_tag() ) {
 			$queried_object = get_queried_object();
 
 			return isset( $queried_object->term_id ) ? array( $queried_object->term_id ) : array();

@@ -80,15 +80,10 @@ productsSlider.forEach((item) => {
   
       breakpoints: {
         320:{
-          centeredSlides:true,
-          slidesPerView: 1.2,
-        },
-        576: {
           slidesPerView: 2,
         },
         768:{
-          centeredSlides:false,
-          slidesPerView: 3
+          slidesPerView: 3,
         },
         1024: {
           slidesPerView: slidesPerView

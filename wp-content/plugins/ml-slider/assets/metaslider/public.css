@@ -327,3 +327,9 @@ div.metaslider .slider-wrapper .nivo-controlNav a {
 .metaslider .coin-slider a[href="javascript:void(0)"] {
 	cursor: default !important;
 }
+
+
+/* Accessibility */
+.metaslider .slides [aria-hidden="true"] a {
+    display: none;
+}

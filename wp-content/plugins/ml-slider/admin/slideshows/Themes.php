@@ -316,7 +316,7 @@ return $theme;
         // Don't load a theme on the editor page.
         if (is_admin() && function_exists('get_current_screen') && $screen = get_current_screen()) {
             if ('metaslider-pro_page_metaslider-theme-editor' === $screen->id) {
-return false;
+            return false;
             }
         }
 
@@ -325,15 +325,16 @@ return false;
         // No theme for this slideshow? Set a default class
         if ( false === $theme ) {
             add_filter( 'metaslider_css_classes', array( $this, 'add_no_theme_class' ), 10, 3 );
+            remove_filter( 'metaslider_css_classes', array( $this, 'add_theme_class' ), 10, 3 );
         }
         
         // 'none' is the default theme to load no theme. 
         // @TODO - Why we don't seem to get 'none' for slideshows with no theme?
         if ('none' == $theme_id) {
-return false;
+            return false;
         }
         if (is_wp_error($theme) || false === $theme) {
-return $theme;
+            return $theme;
         }
 
         // We have a theme, so lets add the class to the body
@@ -341,6 +342,7 @@ return $theme;
 
         // Add the theme class name to the slideshow
         add_filter('metaslider_css_classes', array($this, 'add_theme_class'), 10, 3);
+        remove_filter( 'metaslider_css_classes', array( $this, 'add_no_theme_class' ), 10, 3 );
 
         // Check our themes for a match
         if (file_exists(METASLIDER_THEMES_PATH . $theme['folder'])) {

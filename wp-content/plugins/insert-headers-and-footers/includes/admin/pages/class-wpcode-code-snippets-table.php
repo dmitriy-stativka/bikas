@@ -331,6 +331,26 @@ class WPCode_Code_Snippets_Table extends WP_List_Table {
 					esc_html__( 'Trash', 'insert-headers-and-footers' )
 				);
 			}
+
+			if ( current_user_can( 'edit_post', $snippet->ID ) ) {
+				$actions['duplicate'] = sprintf(
+					'<a href="%s" title="%s">%s</a>',
+					esc_url(
+						wp_nonce_url(
+							add_query_arg(
+								array(
+									'action'     => 'duplicate',
+									'snippet_id' => $snippet->ID,
+								),
+								admin_url( 'admin.php?page=wpcode' )
+							),
+							'wpcode_duplicate_nonce'
+						)
+					),
+					esc_attr__( 'Duplicate this snippet', 'insert-headers-and-footers' ),
+					esc_html__( 'Duplicate', 'insert-headers-and-footers' )
+				);
+			}
 		}
 
 		return $this->row_actions( apply_filters( 'wpcode_code_snippets_row_actions', $actions, $snippet, $this->view ) );
@@ -859,6 +879,7 @@ class WPCode_Code_Snippets_Table extends WP_List_Table {
 			array(
 				'view',
 				'trashed',
+				'duplicated',
 				'untrashed',
 				'deleted',
 				'enabled',

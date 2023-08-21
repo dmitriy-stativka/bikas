@@ -13,6 +13,11 @@
         right: 20px;
         z-index: 10;
         top: 20px;
+
+        @include small-tablet {
+            right: 0;
+            top: 0;
+        }
     }
 
     &__like {
@@ -23,6 +28,10 @@
         height: 30px;
         border-radius: 50%;
         background-color: rgba(var(--bg-b),1.0);
+
+        @include small-tablet {
+            margin-right: 10px;
+        }
 
         svg {
             fill: transparent;
@@ -82,20 +91,24 @@
         gap: 10px;
         padding-top: 20px;
 
+        @include mobile {
+            padding-top: 5px;
+        }
+
         h2 {
             flex-grow: 1;
             color: rgba(var(--cl-a),1.0);
             font-family: var(--font-family);
-            font-size: 16px;
+            font-size: clamp(12px, 1.127vw, 16px);
             font-style: normal;
             font-weight: 400;
-            line-height: 24px; /* 150% */
+            line-height: 150%; /* 150% */
         }
 
         .price {
-            color: rgba(var(--cl-a),1.0);
-            font-family: var(--font-family2);
-            font-size: 20px;
+            color: rgba(var(--cl-a),1.0) !important;
+            font-family: var(--font-family2) !important;
+            font-size: clamp(16px, 2.113vw, 20px) !important;
             font-style: normal;
             font-weight: 700;
             line-height: normal;
@@ -107,6 +120,10 @@
         z-index: 2;
         left: 20px;
         top: 20px;
+
+        @include laptop {
+            display: none;
+        }
     }
 
     .chooser {

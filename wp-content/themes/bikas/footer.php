@@ -145,6 +145,8 @@ $build_folder = get_template_directory_uri() . '/assets/build/';
 
 
 
+<?php load_template(get_template_directory() . '/components/modals.php', true); ?>
+
 <!-- <div id="fixed-call">
   <a href="#question-dialog">
     <img draggable="false" class="emoji" alt=""

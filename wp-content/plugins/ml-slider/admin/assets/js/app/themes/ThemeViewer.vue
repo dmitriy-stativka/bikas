@@ -685,7 +685,7 @@ export default {
 		align-items: center;
 		font-size: 24px;
 		font-weight: 600;
-		background-color: #999999;
+		background-color: #2271b1;
 		color: white;
 		padding: 1rem;
 		box-sizing: border-box;
