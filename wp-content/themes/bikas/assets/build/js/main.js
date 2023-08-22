@@ -8479,13 +8479,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_smallJS__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/smallJS */ "./source/js/components/smallJS.js");
 /* harmony import */ var _components_timer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/timer */ "./source/js/components/timer.js");
 /* harmony import */ var _components_timer__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_timer__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_modals__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/modals */ "./source/js/components/modals.js");
-/* harmony import */ var _components_burger_menu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/burger-menu */ "./source/js/components/burger-menu.js");
+/* harmony import */ var _components_accordions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/accordions */ "./source/js/components/accordions.js");
+/* harmony import */ var _components_modals__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/modals */ "./source/js/components/modals.js");
+/* harmony import */ var _components_burger_menu__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/burger-menu */ "./source/js/components/burger-menu.js");
 
 
 
 
-// import './components/accordions';
+
 
 // import './components/tabs';
 
@@ -8510,7 +8511,7 @@ __webpack_require__.r(__webpack_exports__);
   // tabsParrents: [...document.querySelectorAll("[data-tabs-parrent]")],
   modals: [...document.querySelectorAll('[data-popup]')],
   modalsButton: [...document.querySelectorAll("[data-btn-modal]")],
-  // accParrent: document.querySelectorAll('[data-accordion]'),
+  accParrent: document.querySelectorAll('[data-accordion]'),
   innerButtonModal: [...document.querySelectorAll("[data-btn-inner]")],
   burger: document.querySelectorAll('header .burger'),
   mobileMenu: document.querySelector('.mobile-menu'),
@@ -8546,6 +8547,105 @@ __webpack_require__.r(__webpack_exports__);
 
 // import './vendor/lightbox';
 // import './vendor/lg-video';
+
+/***/ }),
+
+/***/ "./source/js/components/accordions.js":
+/*!********************************************!*\
+  !*** ./source/js/components/accordions.js ***!
+  \********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_vars */ "./source/js/_vars.js");
+/* harmony import */ var _functions_customFunctions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../functions/customFunctions */ "./source/js/functions/customFunctions.js");
+
+
+const {
+  accParrent
+} = _vars__WEBPACK_IMPORTED_MODULE_0__["default"];
+window.addEventListener('DOMContentLoaded', () => {
+  accParrent && accParrent.forEach(function (accordionParrent) {
+    if (accordionParrent) {
+      let multipleSetting = false;
+      let breakpointSetting = false;
+      let defaultOpenSetting;
+      if (accordionParrent.dataset.single && accordionParrent.dataset.breakpoint) {
+        multipleSetting = accordionParrent.dataset.single; // true - включает сингл аккордион
+        breakpointSetting = accordionParrent.dataset.breakpoint; // брейкпоинт сингл режима (если он true)
+      }
+
+      const getAccordions = function () {
+        let dataName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '[data-id]';
+        return accordionParrent.querySelectorAll(dataName);
+      };
+      const accordions = getAccordions();
+      let openedAccordion = null;
+      const closeAccordion = function (accordion) {
+        let className = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'active';
+        accordion.style.maxHeight = 0;
+        (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_1__.removeCustomClass)(accordion, className);
+      };
+      const openAccordion = function (accordion) {
+        let className = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'active';
+        accordion.style.maxHeight = accordion.scrollHeight + 'px';
+        (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_1__.addCustomClass)(accordion, className);
+      };
+      const toggleAccordionButton = function (button) {
+        let className = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'active';
+        (0,_functions_customFunctions__WEBPACK_IMPORTED_MODULE_1__.toggleCustomClass)(button, className);
+      };
+      const checkIsAccordionOpen = function (accordion) {
+        return accordion.classList.contains('active');
+      };
+      const accordionClickHandler = function (e) {
+        e.preventDefault();
+        let curentDataNumber = this.dataset.id;
+        toggleAccordionButton(this);
+        const accordionContent = accordionParrent.querySelector(`[data-content="${curentDataNumber}"]`);
+        const isAccordionOpen = checkIsAccordionOpen(accordionContent);
+        if (isAccordionOpen) {
+          closeAccordion(accordionContent);
+          openedAccordion = null;
+        } else {
+          if (openedAccordion != null) {
+            const mobileSettings = () => {
+              let containerWidth = document.documentElement.clientWidth;
+              if (containerWidth <= breakpointSetting && multipleSetting === 'true') {
+                closeAccordion(openedAccordion);
+                toggleAccordionButton(accordionParrent.querySelector(`[data-id="${openedAccordion.dataset.content}"]`));
+              }
+            };
+            window.addEventListener('resize', () => {
+              mobileSettings();
+            });
+            mobileSettings();
+          }
+          openAccordion(accordionContent);
+          openedAccordion = accordionContent;
+        }
+      };
+      const activateAccordion = function (accordions, handler) {
+        for (const accordion of accordions) {
+          accordion.addEventListener('click', handler);
+        }
+      };
+      const accordionDefaultOpen = currentId => {
+        const defaultOpenContent = accordionParrent.querySelector(`[data-content="${currentId}"]`);
+        const defaultOpenButton = accordionParrent.querySelector(`[data-id="${currentId}"]`);
+        openedAccordion = defaultOpenContent;
+        toggleAccordionButton(defaultOpenButton);
+        openAccordion(defaultOpenContent);
+      };
+      if (accordionParrent.dataset.default) {
+        defaultOpenSetting = accordionParrent.dataset.default; // получает id аккордиона который будет открыт по умолчанию
+        accordionDefaultOpen(defaultOpenSetting);
+      }
+      activateAccordion(accordions, accordionClickHandler);
+    }
+  });
+});
 
 /***/ }),
 
@@ -8853,27 +8953,35 @@ for (const item of document.querySelectorAll('.category-section__wrapper')) {
     newTagElement.appendChild(card);
   });
 }
-
-// const addWrapper = ({parrents, children, tag, tagClass}) => {
-
-//     for (const item of document.querySelectorAll(parrents)) {
-//         const currentItems = item.querySelectorAll(children);
-
-//         currentItems.forEach((card) => {
-//             const newTagElement = document.createElement(tag);
-//             addCustomClass(newTagElement, tagClass);
-//             card.parentNode.insertBefore(newTagElement, card);
-//             newTagElement.appendChild(card);
-//         });
-//     }
-// }
-
-// addWrapper({
-//     parrents: document.querySelectorAll('.category-section__wrapper'),
-//     children: '.product-card',
-//     tag: 'li',
-//     tagClass: 'products__item'
-// })
+if (window.location.href.includes('cart')) {
+  document.querySelector('[data-btn-modal="cart"]').style.pointerEvents = 'none';
+}
+window.addEventListener('DOMContentLoaded', function () {
+  const row = this.document.querySelectorAll('.cart_item');
+  row && row.forEach(function (item) {
+    const numberInput = item.querySelector('.cart_item .qty');
+    const buttonsContainer = item.querySelector('.cart_item .quantity');
+    if (numberInput && buttonsContainer) {
+      const increaseButton = document.createElement('button');
+      increaseButton.textContent = '+';
+      increaseButton.addEventListener('click', e => {
+        e.preventDefault();
+        numberInput.value = parseInt(numberInput.value) + 1;
+      });
+      const decreaseButton = document.createElement('button');
+      decreaseButton.textContent = '-';
+      decreaseButton.addEventListener('click', e => {
+        e.preventDefault();
+        const newValue = parseInt(numberInput.value) - 1;
+        if (newValue >= parseInt(numberInput.getAttribute('min'))) {
+          numberInput.value = newValue;
+        }
+      });
+      buttonsContainer.appendChild(decreaseButton);
+      buttonsContainer.appendChild(increaseButton);
+    }
+  });
+});
 
 /***/ }),
 

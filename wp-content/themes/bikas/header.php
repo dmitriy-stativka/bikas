@@ -171,9 +171,29 @@ $build_folder = get_template_directory_uri() . '/assets/build/'
                           </button>
                         </div>
 
-                        <div class="header__numbers">
-                            +38 (093) 334 52 61 (Viber)
-                        </div>
+                        <ul class='accordion phone header__numbers' data-accordion>
+                            <li class='accordion__item'>
+                                <div class="accordion__header">
+                                    <a href="tel:+38 (093) 334 52 61">+38 (093) 334 52 61 <span>(Viber)</span></a>
+                                    <button class='accordion__btn' data-id='1'>
+                                        <svg width='15' height='15'>
+                                            <use href='<?php echo $build_folder?>img/sprite/sprite.svg#arrow-bottom'></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            
+                            <div class='accordion__content' data-content='1'>
+                                <ul class="phone__list">
+                                    <li class="phone__item">
+                                        <a href="tel:+38 (093) 334 52 61">+38 (093) 334 52 61 <span>(Viber)</span></a>
+                                    </li>
+                                    <li class="phone__item">
+                                        <a href="tel:+38 (093) 334 52 61">+38 (093) 334 52 61 <span>(Viber)</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

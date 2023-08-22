@@ -303,3 +303,9 @@ fieldset {
 .woocommerce-notices-wrapper:empty {
   display: none;
 }
+
+select.orderby {
+  height: 24px;
+  background-color: transparent;
+  border: 0;
+}

@@ -9,7 +9,7 @@ export default {
     // tabsParrents: [...document.querySelectorAll("[data-tabs-parrent]")],
     modals: [...document.querySelectorAll('[data-popup]')],
     modalsButton: [...document.querySelectorAll("[data-btn-modal]")],
-    // accParrent: document.querySelectorAll('[data-accordion]'),
+    accParrent: document.querySelectorAll('[data-accordion]'),
     innerButtonModal: [...document.querySelectorAll("[data-btn-inner]")],
 
     burger: document.querySelectorAll('header .burger'),

@@ -5,7 +5,6 @@ import {
     addClassInArray,
 } from "../functions/customFunctions";
 
-
 addClassInArray(document.querySelectorAll('.woocommerce-pagination'), 'custom-pagination')
 
 for (const item of document.querySelectorAll('.category-section__wrapper')) {
@@ -19,24 +18,41 @@ for (const item of document.querySelectorAll('.category-section__wrapper')) {
     });
 }
 
+if (window.location.href.includes('cart')) {
+    document.querySelector('[data-btn-modal="cart"]').style.pointerEvents = 'none';
+}
 
-// const addWrapper = ({parrents, children, tag, tagClass}) => {
 
-//     for (const item of document.querySelectorAll(parrents)) {
-//         const currentItems = item.querySelectorAll(children);
-        
-//         currentItems.forEach((card) => {
-//             const newTagElement = document.createElement(tag);
-//             addCustomClass(newTagElement, tagClass);
-//             card.parentNode.insertBefore(newTagElement, card);
-//             newTagElement.appendChild(card);
-//         });
-//     }
-// }
+window.addEventListener('DOMContentLoaded', function(){
 
-// addWrapper({
-//     parrents: document.querySelectorAll('.category-section__wrapper'),
-//     children: '.product-card',
-//     tag: 'li',
-//     tagClass: 'products__item'
-// })
+    const row = this.document.querySelectorAll('.cart_item');
+
+    row && row.forEach(function(item) {
+        const numberInput = item.querySelector('.cart_item .qty');
+        const buttonsContainer = item.querySelector('.cart_item .quantity');
+
+        if (numberInput && buttonsContainer) {
+            const increaseButton = document.createElement('button');
+            increaseButton.textContent = '+';
+            increaseButton.addEventListener('click', (e) => {
+                e.preventDefault();
+              numberInput.value = parseInt(numberInput.value) + 1;
+            });
+          
+            const decreaseButton = document.createElement('button');
+            decreaseButton.textContent = '-';
+            decreaseButton.addEventListener('click', (e) => {
+                e.preventDefault();
+              const newValue = parseInt(numberInput.value) - 1;
+              if (newValue >= parseInt(numberInput.getAttribute('min'))) {
+                numberInput.value = newValue;
+              }
+            });
+          
+            buttonsContainer.appendChild(decreaseButton);
+            buttonsContainer.appendChild(increaseButton);
+        }
+    })    
+})
+
+ 
