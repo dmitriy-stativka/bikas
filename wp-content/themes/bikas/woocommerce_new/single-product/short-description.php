@@ -29,5 +29,8 @@ if ( ! $short_description ) {
 
 ?>
 <div class="woocommerce-product-details__short-description">
-	<?php echo $short_description; // WPCS: XSS ok. ?>
+	<div class="woocommerce-product-details__short-description-content">
+		<?php echo $short_description; // WPCS: XSS ok. ?>
+	</div>
+	<button id="moreButton">Читати ще</button>
 </div>

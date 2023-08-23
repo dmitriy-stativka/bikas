@@ -23,7 +23,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 	<?php do_action( 'woocommerce_before_cart_table' ); ?>
 
 	<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
-		<thead>
+		<div>
 			<tr>
 				<th class="product-remove"><span class="screen-reader-text"><?php esc_html_e( 'Remove item', 'woocommerce' ); ?></span></th>
 				<th class="product-thumbnail"><span class="screen-reader-text"><?php esc_html_e( 'Thumbnail image', 'woocommerce' ); ?></span></th>
@@ -32,8 +32,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 				<th class="product-quantity"><?php esc_html_e( 'Quantity', 'woocommerce' ); ?></th>
 				<th class="product-subtotal"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
 			</tr>
-		</thead>
-		<tbody>
+		</div>
+		<div class="cart_tbody">
 			<?php do_action( 'woocommerce_before_cart_contents' ); ?>
 
 			<?php
@@ -154,7 +154,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 			</tr>
 
 			<?php do_action( 'woocommerce_after_cart_contents' ); ?>
-		</tbody>
+		</div>
 	</table>
 	<?php do_action( 'woocommerce_after_cart_table' ); ?>
 </form>

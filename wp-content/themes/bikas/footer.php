@@ -199,6 +199,19 @@ wp_footer(); ?>
   })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
   ga('create', 'UA-88429358-1', 'auto');
   ga('send', 'pageview');
+
+
+
+
+
+
+
+  const hiddenContent = document.querySelector('.woocommerce-product-details__short-description-content');
+
+  document.querySelector('#moreButton').addEventListener('click', function() {
+    hiddenContent.classList.toggle('show');
+  });
+
 </script>
 </body>
 </html>

@@ -15,6 +15,14 @@
   line-height: normal;
   letter-spacing: 1.6px;
   text-transform: uppercase;
+
+  transition: background .5s ease, color .5s ease;
+
+  &:hover{
+    background: rgba(var(--cl-c), 1);
+    color: #000;
+    transition: background .5s ease, color .5s ease;
+  }
 }
 
 .swiper-pagination {
